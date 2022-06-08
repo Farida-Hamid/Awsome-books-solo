@@ -1,4 +1,4 @@
-class Library {
+export default class Library {
   constructor(inputTitle, inputAuthor) {
     this.title = inputTitle;
     this.author = inputAuthor;

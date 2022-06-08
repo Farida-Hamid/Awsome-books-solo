@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A complete website with navigation</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A complete website with navigation</title>
+  <link rel="stylesheet" href="index.css">
+  <!-- <script type="module" src="index.js"></script> -->
 </head>
 <body>
 
-    <header>
-      <nav class="navbar">
-        <h2><a href="#">Awesome Books</a></h2>
-        <ul class="link">
-          <li><a onclick="showBookList()" href="#">List</a></li>
-          <li><a onclick="showForm()" href="#">Add new</a></li>
-          <li><a onclick="showContact()" href="#">Contact</a></li>
-        </ul>
-      </nav>
-      <span id="date"></span>
-    </header>
+  <header>
+    <nav class="navbar">
+      <h2><a href="#">Awesome Books</a></h2>
+      <ul class="link">
+        <li><a id="list">List</a></li>
+        <li><a id="add-new">Add new</a></li>
+        <li><a id="info-contact">Contact</a></li>
+      </ul>
+    </nav>
+    <span id="date"></span>
+  </header>
 
   <section class="main">
     <section id="page1" class="display">
@@ -53,7 +54,8 @@
     </div>
   </footer>
 
-  <script src="modules/display.js"></script>
+  <!-- <script src="./modules/display.js"></script> -->
+  <script type="module" src="index.js"></script>
 
 </body>
 </html>
