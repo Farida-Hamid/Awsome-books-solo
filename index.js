@@ -1,4 +1,5 @@
 import Library from './modules/display.js';
+import { DateTime } from './modules/luxon.js';
 import showHide from './modules/content.js';
 
 const bookList = new Library();
@@ -35,3 +36,13 @@ add.addEventListener(('click'), () => { showHide(2) });
 
 const cont = document.querySelector('#info-contact');
 cont.addEventListener(('click'), () => { showHide(3) });
+
+// Show date and time
+const dateTime = document.querySelector('#date');
+
+const time = () => {
+  // const currentDateTime = DateTime.now().toString();//DateTime.now().toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS);
+  const currentDateTime = DateTime.now().toLocaleString(DateTime.DATETIME_FULL);
+  dateTime.innerHTML = currentDateTime;
+};
+setInterval(time);

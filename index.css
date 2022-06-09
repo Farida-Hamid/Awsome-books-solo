@@ -6,6 +6,9 @@ body {
 
 header {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .navbar {
@@ -109,4 +112,10 @@ form {
 
 .main {
   width: 70%;
+}
+
+#date {
+  text-align: right;
+  margin: 1%;
+  width: 87%;
 }
