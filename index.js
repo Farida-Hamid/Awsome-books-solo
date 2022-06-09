@@ -11,7 +11,7 @@ document.querySelector('form').addEventListener('submit', (e) => {
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
 
-  const book = {'title': title, 'author': author};
+  const book = { title, author };
   bookList.display(book);
   bookList.add(book);
 });

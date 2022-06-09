@@ -3,7 +3,7 @@ export default class Library {
     this.bookList = this.get();
   }
 
-  display = book => {
+  display = (book) => {
     const list = document.querySelector('.books');
     const row = document.createElement('tr');
     row.innerHTML = `
@@ -35,7 +35,7 @@ export default class Library {
     localStorage.setItem('memory', JSON.stringify(this.bookList));
   }
 
-  delete = writer => {
+  delete = (writer) => {
     this.bookList.forEach((book, index) => {
       if (book.author === writer) {
         this.bookList.splice(index, 1);
