@@ -1,7 +1,6 @@
 export default class Library {
-  constructor(inputTitle, inputAuthor) {
-    this.title = inputTitle;
-    this.author = inputAuthor;
+  constructor() {
+    this.bookList = this.get();
   }
 
   display = book => {
@@ -15,15 +14,8 @@ export default class Library {
   }
 
   displayAll = () => {
-    const list = See.get();
-    if (list) {
-      list.forEach((book) => Library.display(book));
-    }
-  }
-
-  undisplay = book => {
-    if (book) {
-      book.parentElement.remove();
+    if (this.bookList) {
+      this.bookList.forEach((book) => this.display(book));
     }
   }
 
@@ -38,21 +30,17 @@ export default class Library {
     return list;
   }
 
-  add = book => {
-    const list = See.get();
-    list.push(book);
-    localStorage.setItem('memory', JSON.stringify(list));
+  add = (book) => {
+    this.bookList.push(book);
+    localStorage.setItem('memory', JSON.stringify(this.bookList));
   }
 
   delete = writer => {
-    const list = See.get();
-
-    list.forEach((book, index) => {
+    this.bookList.forEach((book, index) => {
       if (book.author === writer) {
-        list.splice(index, 1);
-        Library.undisplay(book);
+        this.bookList.splice(index, 1);
       }
     });
-    localStorage.setItem('memory', JSON.stringify(list));
+    localStorage.setItem('memory', JSON.stringify(this.bookList));
   }
 }
